@@ -1,5 +1,11 @@
+import os.path
+
 from flask import Flask, jsonify
+from dotenv import load_dotenv
 from service import github_info_provider
+
+if os.path.isfile(".env"):
+    load_dotenv(".env")
 
 app = Flask(import_name=__name__)
 
