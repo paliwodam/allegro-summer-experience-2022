@@ -1,8 +1,11 @@
 import json
+import pathlib
 
 import pytest
 
 from src.main import create_app
+
+TEST_DATA_DIRECTORY = pathlib.Path(__file__).parent.joinpath("test_data")
 
 
 @pytest.fixture
@@ -11,7 +14,7 @@ def app():
 
 
 def load_json_test_data(file_name):
-    with open(f"./test_data/{file_name}", "r") as f:
+    with open(f"{TEST_DATA_DIRECTORY}/{file_name}", "r") as f:
         data = json.load(f)
     return data
 

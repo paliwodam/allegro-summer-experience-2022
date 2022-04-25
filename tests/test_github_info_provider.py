@@ -18,5 +18,6 @@ def test_summarize_user_info():
 def test_get_user_repos():
     result = github_info_provider.summarize_repos_info("paliwodam")
 
-    assert result["Bomberman"] == {"Java": 65936, "JavaScript": 602, "HTML": 581}
-    assert result["DoublePushout"] == {"Python": 10384}
+    assert len(result) == 2
+    assert {"name": "Bomberman", "languages": {"Java": 65936, "JavaScript": 602, "HTML": 581}} in result
+    assert {"name": "DoublePushout", "languages": {"Python": 10384}} in result

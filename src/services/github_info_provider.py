@@ -35,12 +35,7 @@ def summarize_repos_info(user_name):
     if not all_user_repos:
         return None
 
-    summary = {}
-
-    for repo in all_user_repos:
-        repo_name = repo["name"]
-        repo_languages = github.fetch_repo_languages(user_name, repo_name)
-
-        summary[repo_name] = repo_languages
-
-    return summary
+    return [
+        {"name": repo["name"], "languages": github.fetch_repo_languages(user_name, repo["name"])}
+        for repo in all_user_repos
+    ]
