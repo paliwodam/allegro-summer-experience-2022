@@ -1,4 +1,4 @@
-## **My email recruitment process: paliwodam.s.m@gmail.com**
+## Summary github activity API
 
 Web api providing login, name, bio, summary of languages used in all public repositories with number of bytes written in corresponding language for github users.
 
